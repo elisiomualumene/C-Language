@@ -1,0 +1,68 @@
+Var
+   // Seção de Declarações das variáveis
+   vetor10 : vetor[1..10] de inteiro
+   vetor5 : vetor[1..5] de inteiro
+   pvetor : vetor[1..10] de inteiro
+   svetor : vetor[1..10] de inteiro
+   i, i2, aux : inteiro
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   para i:=1 ate 10 faca
+      escreval("Digite o ",i,"º valor do vetor de 10 posições.")
+      leia(vetor[i])
+   fimpara
+   escreval
+   para i:=1 ate 5 faca
+      escreval("Digite o ",i,"º valor do vetor de 10 posições.")
+      leia(vetor[i])
+   fimpara
+
+   //ATRIBUIÇÃO DE VALORES PARA O PRIMEIRO VETOR RESULTANTE
+
+   para i := 1 ate 5 faca
+      aux := aux + vetor5[i]
+   fimpara
+
+   para i := 1 ate 10 faca
+      se (vetor10[i] % 2) = 0 entao
+         pvetor[i] := vetor10[i] + aux
+      fimse
+   fimpara
+
+   //ATRIBUIÇÃO DE VALORES PARA O SEGUNDO VETOR RESULTANTE
+
+   para i:= 1 ate 10 faca
+      se (vetor10[i] % 2) = 1 entao
+         para i2 := 1 ate 5 faca
+            se (vetor10[i] % vetor5[i2]) = 0 entao
+               svetor[i] := svetor[i] + 1
+            fimse
+         fimpara
+      fimse
+   fimpara
+
+   //EXIBIÇÃO DO RESULTADO
+
+   escreval("Primeiro vetor resultante:")
+   escreval("(Soma de  cada número par do primeiro vetor com todos do segundo.)")
+
+   para i := 1 ate 10 faca
+      se pvetor[i] <> 0 entao
+         escreval(pvetor[i])
+      fimse
+   fimpara
+
+   escreval("")
+
+   escreval("Segundo vetor resultante:")
+   escreval("(Quantidade de divisores que cada número ímpar no primeiro vetor tem no segundo vetor.)")
+   para i := 1 ate 10 faca
+      se (vetor10[i] % 2) = 1 entao
+         escreval(svetor[i])
+      fimse
+   fimpara
+
+Fimalgoritmo
+
+Fimalgoritmo

@@ -1,0 +1,39 @@
+Var
+   // Seção de Declarações das variáveis
+   vetorpar,vetorimpar:vetor[1..10] de inteiro
+   i,num,contpar,contimpar:inteiro
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   Para i:=1 ate 10 faca
+      Escreval("Digite o ",i,"º número")
+      leia(num)
+      se num mod 2 =0 entao
+         vetorpar[i]:=num
+         contpar:=contpar+1
+      senao
+         vetorimpar[i]:=num
+         contimpar:=contimpar+1
+      fimse
+   fimpara
+   escreval
+   escreval("VETOR COM NUMEROS PARES")
+   Para i:=1 ate 10 faca
+      se vetorpar[i]<>0 entao
+         escreva(vetorpar[i])
+      fimse
+   fimpara
+   se contpar=0 entao
+      escreval("NÃO EXISTEM NUMEROS PARES")
+   fimse
+   escreval
+   escreval
+   escreval("VETOR COM NUMEROS IMPARES")
+   para i:=1 ate 10 faca
+      se vetorimpar[i]<>0 entao
+         escreva(vetorimpar[i])
+      fimse
+   fimpara
+   se contimpar=0 entao
+      escreval("NÃO EXISTEM NUMEROS IMPARES")
+   fimse
+Fimalgoritmo

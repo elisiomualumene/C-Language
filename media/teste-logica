@@ -1,0 +1,36 @@
+Var
+   nome_aluno:vetor[1..7] de caracter
+   media_final:vetor[1..7] de real
+   i:inteiro
+   nome_media_maior:caracter
+   nota_exame,media_maior:real
+Inicio
+   para i:=1 ate 7 faca
+      escreval("Digite o nome do ",i,"º aluno")
+      leia(nome_aluno[i])
+      escreval("Digite a média do ",i,"º aluno")
+      leia(media_final[i])
+   fimpara
+   media_maior:=media_final[1]
+   nome_media_maior:=nome_aluno[1]
+   para i:=2 ate 7 faca
+      se media_final[i]>=media_maior entao
+         media_maior:=media_final[i]
+         nome_media_maior:=nome_aluno[i]
+      fimse
+   fimpara
+   limpatela
+   escreval
+   escreval("O aluno ",nome_media_maior," obteve a maior media final com:",media_maior)
+   escreval("---------------------------------------------------------")
+   escreval
+   para i:=1 ate 7 faca
+      se media_final[i]<7 entao
+         nota_exame:= 10 - media_final[i]
+         escreval("O aluno: ",nome_aluno[i], " tirou media final: ",media_final[i])
+         escreval("Para ele ser aprovado, ele precisa tirar ",nota_exame:4:2," no exame")
+         escreval("*******************************************************")
+         escreval("_______________________________________________________")
+      fimse
+   fimpara
+Fimalgoritmo

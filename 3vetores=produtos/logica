@@ -1,0 +1,47 @@
+Var
+   nome_prod:vetor[1..10] de caracter
+   cod_prod:vetor[1..10] de inteiro
+   novo_preco,preco_prod:vetor[1..10] de real
+   i:inteiro
+Inicio
+   para i:=1 ate 10 faca
+      escreval("Digite o código do ",i,"º produto")
+      leia(cod_prod[i])
+      escreval("Digite o nome do ",i,"º produto")
+      leia(nome_prod[i])
+      escreval("Digite o preço do produto")
+      leia(preco_prod[i])
+   fimpara
+   para i:=1 ate 10 faca
+      se ((cod_prod[i]mod 2 =0) ou (preco_prod[i]>1000)) entao
+         se ((cod_prod[i] mod 2=0) e (preco_prod[i]>1000)) entao
+            //novo_cod[i]:=cod_prod[i]
+            novo_preco[i]:=preco_prod[i]+preco_prod[i]*0.20
+         senao
+            se cod_prod[i] mod 2=0 entao
+               // novo_cod[i]:=cod_prod[i]
+               novo_preco[i]:=preco_prod[i]+preco_prod[i]*0.15
+            senao
+               se preco_prod[i]>1000 entao
+                  //  novo_cod[i]:=cod_prod[i]
+                  novo_preco[i]:=preco_prod[i]+preco_prod[i]*0.10
+               fimse
+            fimse
+         fimse
+      fimse
+   fimpara
+   limpatela
+   escreval("Relatorio------------------------------Novos Preços------")
+   escreval
+   escreval("Código------------------------Nome do Produto--------Preço Antigo-------Preço Novo---")
+   escreval
+   para i:=1 ate 10 faca
+      se novo_preco[i]<>0 entao
+         escreva(cod_prod[i]:5,"-------------------------",nome_prod[i]:20,"-------R$",preco_prod[i]:6:2,"-------R$",novo_preco[i]:6:2)
+         escreval
+      fimse
+   fimpara
+
+
+
+Fimalgoritmo

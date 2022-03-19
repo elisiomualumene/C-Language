@@ -1,0 +1,18 @@
+Var
+   // Seção de Declarações das variáveis
+   vet:vetor[1..5] de inteiro
+   soma,i:inteiro
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   para i:=1 ate 5 faca
+      escreva("Digite o ",i,"º número ")
+      leia(vet[i])
+      soma:=soma+vet[i]
+   fimpara
+   escreva("Os números digitados foram: ")
+   para i:=1 ate 4 faca
+      escreva(vet[i]," +")
+   fimpara
+   escreva(vet[5],"=",soma)
+Fimalgoritmo

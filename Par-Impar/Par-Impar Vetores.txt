@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+void
+main (void)
+{
+  int numeros[6];
+
+
+  printf (" Digite os valores para o Vetor numeros ");
+  for (int i = 0; i < 6; i++)
+    {
+      scanf ("%d", &numeros[i]);
+      if (numeros[i] % 2 == 0)
+	{
+	  printf ("\nO Numero %d digitado e PAR", numeros[i]);
+	}
+      else
+	{
+	  printf ("\nO Numero %d digitado e IMPAR", numeros[i]);
+	};
+    };
+};

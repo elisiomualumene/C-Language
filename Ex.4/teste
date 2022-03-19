@@ -1,0 +1,67 @@
+Var
+   // Seção de Declarações das variáveis
+   nome_vendedores:vetor[1..10] de caracter
+   total_vendas:vetor[1..10] de inteiro
+   valor,perc_comissao:vetor[1..10] de real
+   menor_valor,maior_valor:real
+   total_vendas1,I:INTEIRO
+   maior_vend,menor_vend:caracter
+
+Inicio
+   // Area para inserir os dados de cada vendedor
+   escreval("---------ÁREA DE INSERÇÃO DOS DADOS DE CADA VENDEDOR-------")
+    para i:=1 ate 3 faca
+      escreval("-----------------------------------------")
+      escreval("Digite o nome do ",i,"º vendedor")
+      leia(nome_vendedores[i])
+      escreval
+      escreval("Digite o total de vendas do vendedor: ",nome_vendedores[i])
+      leia(total_vendas[i])
+      escreval
+      escreval("Digite o valor do percentual de comissão, a que este vendedor tem direito")
+      leia(perc_comissao[i])
+      limpatela
+    fimpara
+   escreval("---------------RESPOSTA AS QUESTÕES-----------")
+   escreval("--Relatório com os nomes dos vendedores e os valores a receber referentes à comissão----")
+   escreval
+   escreval("Nome do vendedor-----------------Valor da Comissão")
+   para i:=1 ate 3 faca
+      escreval(nome_vendedores[i]:35,"R$",total_vendas[i]*perc_comissao[i]/100:4:2)
+      valor[i]:=total_vendas[i]*perc_comissao[i]/100
+   fimpara
+   escreval
+   escreval("************************************************")
+   escreva("O total das vendas de todos os vendedores foi:")
+   para i:=1 ate 10 faca
+      total_vendas1:=total_vendas1+total_vendas[i]
+   fimpara
+   escreval(total_vendas1)
+   escreval
+   escreval("************************************************")
+   //c) o maior valor a receber e o nome de que o receberá;
+   //d) o menor valor a receber e o nome de quem o receberá
+   maior_valor:=valor[1]
+   menor_valor:=valor[1]
+   maior_vend:=nome_vendedores[1]
+   menor_vend:=nome_vendedores[1]
+   para i:=1 ate 3 faca
+      se valor[i]>maior_valor entao
+         maior_valor:=valor[i]
+         maior_vend:=nome_vendedores[i]
+      fimse
+      se valor[i]<menor_valor entao
+         menor_valor:=valor[i]
+         menor_vend:=nome_vendedores[i]
+      fimse
+   fimpara
+   //c) o maior valor a receber e o nome de que o receberá;
+   escreval("----O MAIOR VALOR E O NOME DO VENDEDOR---")
+   escreval("R$",maior_valor:4:2,"----->> ",maior_vend)
+   escreval
+   escreval("************************************************")
+   //d) o menor valor a receber e o nome de quem o receberá
+   escreval("----O MENOR VALOR E O NOME DO VENDEDOR---")
+   escreval("R$",menor_valor:4:2,"----->> ",menor_vend)
+
+Fimalgoritmo

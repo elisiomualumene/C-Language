@@ -1,0 +1,32 @@
+Var
+   // Seção de Declarações das variáveis
+   vet1:vetor[1..15] de inteiro
+   vet2:vetor[1..15] de real
+   i,maior:inteiro
+
+Inicio
+   // Seção de Comandos, procedimento, funções, operadores, etc...
+   para i:=1 ate 15 faca
+      escreval("Digite o ",i,"º valor")
+      leia(vet1[i])
+   fimpara
+   maior:=vet1[1]
+   para i:=1 ate 15 faca
+      se vet1[i] > maior entao
+         maior:= vet1[i]
+      fimse
+   fimpara
+   para i:=1 ate 15 faca
+      vet2[i]:=vet1[i]/maior
+   fimpara
+   escreval("----------------------------")
+   escreval("O maior valor encontrado foi: ",maior)
+   escreval("------------------------------")
+   escreval("Lista do novo vetor")
+   escreval
+   para i:=1 ate 15 faca
+      escreva(vet2[i]:5:2)
+   fimpara
+
+
+Fimalgoritmo
